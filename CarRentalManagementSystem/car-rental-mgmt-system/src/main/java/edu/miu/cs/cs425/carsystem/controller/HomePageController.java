@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = {"", "/home", "/car"})
+
 public class HomePageController {
     @Autowired
     private CarService carService;
 
-    @GetMapping(value = {"/", "home"})
+    @GetMapping(value =  "/home")
     public String displayHomePage(){
         return "public/home/index";
     }
