@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="public/fragments/head-elements :: headElements"></head>
+<title>Students - About Us</title>
+</head>
+<body>
+<div th:replace="public/fragments/header :: header"></div>
+<div id="mainContainer" class="container">
+    <h3>About Us</h3>
+    <hr/>
+    <div>
+        <img id="banner-img" th:src="@{/images/bugatti.jpg}" alt="car">
+    </div>
+    <div style="font-size: 1em">
+        <p>
+            This is some information about the car rental  system.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis eos impedit ipsum maxime nisi nulla numquam obcaecati
+            sunt temporibus, unde? Alias aliquam cum, cumque deleniti distinctio ea eaque harum in iste, modi, nesciunt odio praesentium quibusdam.
+            Ab assumenda culpa cumque debitis dolore dolorum fugit id iusto nam nihil praesentium quam quibusdam quod similique tempora, ullam, voluptate
+            voluptatibus. Accusantium aliquid commodi deserunt dolores doloribus est exercitationem facere hic id inventore maiores odit perferendis quia quis,
+            recusandae rem reprehenderit sed sequi vel veniam! Asperiores commodi corporis culpa eius fugiat hic laudantium quia! Animi eius nulla officiis optio
+            perferendis perspiciatis quod suscipit veritatis.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cumque delectus hic ipsum magni praesentium quam quisquam r
+            epellat, rerum saepe sit sunt ut voluptatem. A adipisci at culpa eius ex expedita nam porro voluptas! Commodi laboriosam reprehenderit
+            suscipit. Blanditiis consequatur earum eveniet fuga ipsam nobis nulla qui. Alias, officia, possimus.</p>
+    </div>
+</div>
+
+<div th:replace="public/fragments/footer :: footer"></div>
+</body>
+</html>
