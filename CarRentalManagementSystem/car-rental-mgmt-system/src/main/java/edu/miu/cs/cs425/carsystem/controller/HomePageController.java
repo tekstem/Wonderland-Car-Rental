@@ -12,7 +12,7 @@ public class HomePageController {
     @Autowired
     private CarService carService;
 
-    @GetMapping(value =  "/home")
+    @GetMapping(value =  {"/", "/home"})
     public String displayHomePage(){
         return "public/home/index";
     }

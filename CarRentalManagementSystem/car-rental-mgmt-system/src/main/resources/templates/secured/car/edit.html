@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="public/fragments/head ::headElements"></head>
+<title>Student Management system - Students</title>
+</head>
+<body>
+<div th:replace="public/fragments/header :: header"></div>
+<div id="mainContainer" class="container">
+    <h3>New Car Form</h3>
+    <hr/>
+    <div style="font-size: 1em">
+        <div><span><b>Note:</b> Form fields marked with asterisk (*) are required.</span></div>
+        <!-- new student form-->
+        <form id="carForm" method="post" action="/register/car/update" th:object="${car}">
+            <fieldset>
+                <!--                    <legend>New Student Form</legend>-->
+                <div class="container" style="margin-top: 1em;">
+
+                    <div class="row" style="padding-top: .75em;">
+                        <input type="hidden" name="carId" th:value="${carId}" />
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="registrationNumber">*Registration Number:</label>
+                                <span th:if="${#fields.hasErrors('registrationNumber')}" th:errors="*{registrationNumber}"
+                                      class="alert alert-danger"></span>
+                                <input id="registrationNumber" name="registrationNumber" type="text" class="form-control"
+                                       th:value="${car.registrationNumber}" autofocus>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding-top: .75em;">
+                        <!--            <input type="hidden" name="carId" th:value="${carId}" />-->
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="model">Model:</label>
+                                <span th:if="${#fields.hasErrors('model')}" th:errors="*{model}"
+                                      class="alert alert-danger"></span>
+                                <input id="model" name="model" type="text" class="form-control"
+                                       th:value="${car.model}" autofocus>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="make">Make:</label>
+                                <!-- <span th:if="${#fields.hasErrors('studentNumber')}" th:errors="*{studentNumber}"
+                                    class="alert alert-danger"></span> -->
+                                <input id="make" name="make" type="text" class="form-control"
+                                       th:value="${car.make}" autofocus>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="year">Year:</label>
+                                <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}"
+                                      class="alert alert-danger"></span>
+                                <input id="year" name="year" type="number" class="form-control"
+                                       th:value="${car.year}" autofocus>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding-top: .75em;">
+                        <input type="hidden" name="carId" th:value="${carId}" />
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="cgpa">Milage:</label>
+                                <span th:if="${#fields.hasErrors('milage')}" th:errors="*{milage}"
+                                      class="alert alert-danger"></span>
+                                <input id="milage" name="milage" type="number" class="form-control"
+                                       th:value="${car.milage}" autofocus>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- <div class="form-group">
+                              <label for="dateOfEnrollment">*Date of Enrollement:</label>
+                              <span th:if="${#fields.hasErrors('dateOfEnrollment')}" th:errors="*{dateOfEnrollment}"
+                                    class="alert alert-danger"></span>
+                              <input id="dateOfEnrollment" name="dateOfEnrollment" type="boolean" class="form-control"
+                                     th:value="${student.dateOfEnrollment}" autofocus>
+                            </div> -->
+                            <!--              <fieldset class="form-group">-->
+                            <!--    <div class="row">-->
+                            <!--      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>-->
+                            <!--      <div class="col-sm-10">-->
+                            <!--        <div class="form-check">-->
+                            <!--          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>-->
+                            <!--          <label class="form-check-label" for="gridRadios1">-->
+                            <!--           true-->
+                            <!--          </label>-->
+                            <!--        </div>-->
+                            <!--        <div class="form-check">-->
+                            <!--          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">-->
+                            <!--          <label class="form-check-label" for="gridRadios2">-->
+                            <!--           false-->
+                            <!--          </label>-->
+                            <!--        </div>-->
+                            <!--       -->
+                            <!--      </div>-->
+                            <!--    </div>-->
+                            <!--  </fieldset>-->
+                        </div>
+                    </div>
+
+                    <div style="padding-top: .75em;">
+                        <!-- <input type="hidden" name="studentId" th:value="${student.studentId}" /> -->
+                        <div>
+                            <div style="float:right;">
+                                <button id="btnReset" type="reset" class="btn btn-outline-info" style="margin-right: 2em;">Reset</button>
+                                <a href="/register/car/list" class="btn btn-outline-warning" style="margin-right: 2em;">Cancel</a>
+                                <button id="btnSubmit" type="submit" class="btn btn-outline-primary">Register Car</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<!--<div th:replace="public/fragments/footer :: footer"></div>-->
+</body>
+</html>
