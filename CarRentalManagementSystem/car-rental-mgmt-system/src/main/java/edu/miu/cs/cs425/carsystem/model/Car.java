@@ -24,8 +24,8 @@ public class Car {
     private String registrationNumber;
     private String model;
     private String make;
-    private Integer year;
-    private Integer milage;
+    private String year;
+    private String milage;
     private Boolean status;
 
     @Override

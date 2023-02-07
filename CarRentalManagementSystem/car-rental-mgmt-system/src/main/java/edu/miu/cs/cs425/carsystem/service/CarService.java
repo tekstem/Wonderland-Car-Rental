@@ -14,6 +14,6 @@ public interface CarService {
   public void deleteCarById(Integer carId);
   public Iterable<Car> getAllCars();
  public Page<Car> getAllCarPaged(Integer pageNo);
- public List<Car> searchCar(String carSearch);
+public List<Car>  searchCarByRegistrationNumberOrModelOrMakeOrYear(String searchString);
 
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head th:replace="public/fragments/head ::headElements"></head>
-<title>Student Management system - Students</title>
+<title>Car Rental system - Students</title>
 </head>
 <body>
 <div th:replace="public/fragments/header :: header"></div>
@@ -15,10 +15,8 @@
       <fieldset>
         <!--                    <legend>New Student Form</legend>-->
         <div class="container" style="margin-top: 1em;">
-
           <div class="row" style="padding-top: .75em;">
             <input type="hidden" name="carId" th:value="${carId}" />
-
             <div class="col-md-12">
               <div class="form-group">
                 <label for="registrationNumber">*Registration Number:</label>
@@ -32,7 +30,6 @@
 
           <div class="row" style="padding-top: .75em;">
 <!--            <input type="hidden" name="carId" th:value="${carId}" />-->
-
             <div class="col-md-4">
               <div class="form-group">
                 <label for="model">Model:</label>
@@ -63,7 +60,7 @@
           </div>
 
           <div class="row" style="padding-top: .75em;">
-            <input type="hidden" name="carId" th:value="${carId}" />
+            <input type="hidden" name="carId" th:value="${carId}"/>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="cgpa">Milage:</label>
@@ -103,13 +100,12 @@
 <!--  </fieldset>-->
             </div>
           </div>
-
           <div style="padding-top: .75em;">
             <!-- <input type="hidden" name="studentId" th:value="${student.studentId}" /> -->
             <div>
               <div style="float:right;">
                 <button id="btnReset" type="reset" class="btn btn-outline-info" style="margin-right: 2em;">Reset</button>
-                <a href="/car/list" class="btn btn-outline-warning" style="margin-right: 2em;">Cancel</a>
+                <a href="/register/car/list" class="btn btn-outline-warning" style="margin-right: 2em;">Cancel</a>
                 <button id="btnSubmit" type="submit" class="btn btn-outline-primary">Register Student</button>
               </div>
             </div>
@@ -119,7 +115,6 @@
     </form>
   </div>
 </div>
-
 <!--<div th:replace="public/fragments/footer :: footer"></div>-->
 </body>
 </html>

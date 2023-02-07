@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="public/fragments/head ::headElements"></head>
+<title>Car Rental system - Customer</title>
+</head>
+<body>
+<div th:replace="public/fragments/header :: header"></div>
+<div id="mainContainer" class="container">
+    <h3>New Car Form</h3>
+    <hr/>
+    <div style="font-size: 1em">
+        <div><span><b>Note:</b> Form fields marked with asterisk (*) are required.</span></div>
+        <!-- new student form-->
+        <form id="customerForm" method="post" action="/register/customer/new" th:object="${customer}">
+            <fieldset>
+                <!--                    <legend>New Student Form</legend>-->
+                <div class="container" style="margin-top: 1em;">
+                    <div class="row" style="padding-top: .75em;">
+<!--                        <input type="hidden" name="customerId" th:value="${customerId}" />-->
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="driveLicence">*Drive Licence:</label>
+                                <span th:if="${#fields.hasErrors('driveLicence')}" th:errors="*{driveLicence}"
+                                      class="alert alert-danger"></span>
+                                <input id="driveLicence" name="driveLicence" type="text" class="form-control"
+                                       th:value="${customer.driveLicence}" autofocus>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding-top: .75em;">
+                                   <input type="hidden" name="customerId" th:value="${customerId}" />
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="firstName">First Name:</label>
+                                <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"
+                                      class="alert alert-danger"></span>
+                                <input id="firstName" name="firstName" type="text" class="form-control"
+                                       th:value="${customer.firstName}" autofocus>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="make">Last Name:</label>
+                                <!-- <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+                                    class="alert alert-danger"></span> -->
+                                <input id="lastName" name="lastName" type="text" class="form-control"
+                                       th:value="${customer.lastName}" autofocus>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="year">Email Address:</label>
+                                <span th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}"
+                                      class="alert alert-danger"></span>
+                                <input id="year" name="emailAddress" type="text" class="form-control"
+                                       th:value="${customer.emailAddress}" autofocus>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding-top: .75em;">
+                        <input type="hidden" name="customer.customerId" th:value="${customerId}"/>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="phoneNo">phoneNo:</label>
+                                <span th:if="${#fields.hasErrors('phoneNo')}" th:errors="*{phoneNo}"
+                                      class="alert alert-danger"></span>
+                                <input id="phoneNo" name="phoneNo" type="text" class="form-control"
+                                       th:value="${customer.phoneNo}" autofocus>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ssn">ssn:</label>
+                                <span th:if="${#fields.hasErrors('ssn')}" th:errors="*{ssn}"
+                                      class="alert alert-danger"></span>
+                                <input id="ssn" name="ssn" type="text" class="form-control"
+                                       th:value="${customer.ssn}" autofocus>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- <div class="form-group">
+                              <label for="dateOfEnrollment">*Date of Enrollement:</label>
+                              <span th:if="${#fields.hasErrors('dateOfEnrollment')}" th:errors="*{dateOfEnrollment}"
+                                    class="alert alert-danger"></span>
+                              <input id="dateOfEnrollment" name="dateOfEnrollment" type="boolean" class="form-control"
+                                     th:value="${student.dateOfEnrollment}" autofocus>
+                            </div> -->
+                            <!--              <fieldset class="form-group">-->
+                            <!--    <div class="row">-->
+                            <!--      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>-->
+                            <!--      <div class="col-sm-10">-->
+                            <!--        <div class="form-check">-->
+                            <!--          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>-->
+                            <!--          <label class="form-check-label" for="gridRadios1">-->
+                            <!--           true-->
+                            <!--          </label>-->
+                            <!--        </div>-->
+                            <!--        <div class="form-check">-->
+                            <!--          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">-->
+                            <!--          <label class="form-check-label" for="gridRadios2">-->
+                            <!--           false-->
+                            <!--          </label>-->
+                            <!--        </div>-->
+                            <!--       -->
+                            <!--      </div>-->
+                            <!--    </div>-->
+                            <!--  </fieldset>-->
+                        </div>
+                    </div>
+                    <div style="padding-top: .75em;">
+                        <!-- <input type="hidden" name="studentId" th:value="${student.studentId}" /> -->
+                        <div>
+                            <div style="float:right;">
+                                <button id="btnReset" type="reset" class="btn btn-outline-info" style="margin-right: 2em;">Reset</button>
+                                <a href="/register/customer/list" class="btn btn-outline-warning" style="margin-right: 2em;">Cancel</a>
+                                <button id="btnSubmit" type="submit" class="btn btn-outline-primary">Register Student</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<!--<div th:replace="public/fragments/footer :: footer"></div>-->
+</body>
+</html>

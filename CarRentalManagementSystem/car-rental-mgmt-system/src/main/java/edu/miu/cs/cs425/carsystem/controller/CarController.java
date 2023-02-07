@@ -4,7 +4,6 @@ import edu.miu.cs.cs425.carsystem.model.Car;
 import edu.miu.cs.cs425.carsystem.service.CarService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 
 @RequestMapping(value = {"/car", "/register/car"})
-public class carController {
+public class CarController {
     @Autowired
     private CarService carService;
 
@@ -62,8 +61,7 @@ public String deleteCarById( @PathVariable Integer carId){
         return "redirect:/register/car/list";
     }
     @PostMapping(value = {"/update"})
-    public String updateCars(@Valid @ModelAttribute("car") Car car,
-                             BindingResult bindingResult, Model model) {
+    public String updateCars(@Valid @ModelAttribute("car") Car car, BindingResult bindingResult, Model model) {
         if(bindingResult.hasErrors()) {
             model.addAttribute("car", car);
             model.addAttribute("errors", bindingResult.getAllErrors());
@@ -72,6 +70,16 @@ public String deleteCarById( @PathVariable Integer carId){
 
         carService.updatecar(car);
         return "redirect:/register/car/list";
+    }
+
+    @GetMapping(value = {"/search"})
+    public ModelAndView searchCars(@RequestParam String searchString) {
+        var modelAndView = new ModelAndView();
+        var car=carService.searchCarByRegistrationNumberOrModelOrMakeOrYear(searchString);
+        modelAndView.addObject("car", car);
+        modelAndView.addObject("searchString", searchString);
+        modelAndView.setViewName("secured/car/searchResult");
+        return modelAndView;
     }
 
 }

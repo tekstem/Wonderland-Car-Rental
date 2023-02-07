@@ -8,6 +8,21 @@
 <div id="mainContainer" class="container">
   <div style="width: 100%;">
     <h3 style="display: inline;">Our Cars</h3>
+    <form action="/register/car/search" method="get">
+      <fieldset>
+        <legend style="font-weight: bolder;">Search for Car(s)</legend>
+        <label>
+          You may search by Car's Name or any part of the Address data.
+        </label>
+        <div>
+          <input type="search" name="searchString" id="searchString" style="width: 35%; height: 4em;"
+                 th:value="${searchString}" placeholder="Enter some text to search for Cars"
+                 autofocus>
+          <button type="submit" style="height: 4em; width: 7em;">Search</button>
+        </div>
+      </fieldset>
+    </form>
+
     <span style="float: right;">
                 <a class="btn btn-outline-primary btn-lg" href="/register/car/new">
                     <i class="fa-brands fa-product-hunt"></i> Add a New Car
@@ -18,6 +33,9 @@
   <hr/>
   <div style="font-size: 1em">
     <!-- table with cars-->
+
+    <!--            Search form-->
+
     <table class="table table-striped">
       <thead>
       <tr>

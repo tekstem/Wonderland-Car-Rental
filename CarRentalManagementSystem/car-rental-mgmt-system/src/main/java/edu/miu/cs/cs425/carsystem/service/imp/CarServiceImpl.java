@@ -58,7 +58,9 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public List<Car> searchCar(String carSearch) {
-        return null;
+    public List<Car> searchCarByRegistrationNumberOrModelOrMakeOrYear(String searchString) {
+        return carRepository.searchCarByRegistrationNumberOrModelOrMakeOrYear(searchString,searchString,searchString,searchString);
     }
+
+
 }
