@@ -34,17 +34,14 @@ public class CustomerServiceImpl  implements CustomerService {
     public Customer updateCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
-
     @Override
     public Iterable<Customer> getAllCustomers() {
         return customerRepository.findAll(Sort.by(Sort.Direction.ASC, "firstName"));
     }
-
     @Override
     public Page<Customer> getAllCustomersPaged(int pageNo) {
         return customerRepository.findAll(PageRequest.of(pageNo,4,Sort.by(Sort.Direction.ASC,"firstName")));
     }
-
     @Override
     public Customer getCustomerById(Integer customerId) {
         return customerRepository.findById(customerId).orElse(null);
