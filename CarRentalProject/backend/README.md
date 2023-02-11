@@ -9,14 +9,15 @@ The backend application follows the n-tier architecture with emphasis of the fol
 ### Technologies used.
 
 - The backend is built using [Java (Spring boot)](https://spring.io/projects/spring-boot) in the backend.
-- It is running on the [MysSQL DB](https://www.mysql.com/).
+- It is running on the [MySQL DB](https://www.mysql.com/).
 - The backend image can be created using [docker](https://www.docker.com/).
 
+-The front is built using React(javaScript library)
 ### Prerequisites.
 
 - Environments and/or programming language prerequisites.
     - Java JDK: [JDK](https://www.oracle.com/java/technologies/downloads/) preferably download _jdk
-      16_ ([download link](https://www.oracle.com/java/technologies/downloads/))
+      19 but minimum Jdk 17_ ([download link](https://www.oracle.com/java/technologies/downloads/))
 - Editors or IDEs
     - **IDEs/editors:**
     - _Preferably_: [Intellij](https://www.jetbrains.com/idea/download/)
