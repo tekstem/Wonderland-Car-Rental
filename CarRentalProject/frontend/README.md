@@ -6,14 +6,14 @@
 
 - The application is built using [React.js](https://reactjs.org/) for the frontend
   and [Java (Spring boot)](https://spring.io/projects/spring-boot) in the backend.
-- It is running on the [MysSQL DB](https://www.mysql.com/).
+- It is running on the [MySQL DB](https://www.mysql.com/).
 
 ### Prerequisites.
 
 - Environments and/or programming language prerequisites.
     - JavaScript: [Node.js](https://nodejs.org/en/) preferably download _v10_ ([download link](https://nodejs.org/en/))
-    - Java JDK: [JDK](https://www.oracle.com/java/technologies/downloads/) preferably download _jdk
-      16_ ([download link](https://www.oracle.com/java/technologies/downloads/))
+    - Java JDK: [JDK](https://www.oracle.com/java/technologies/downloads/) atleast download _jdk
+      17_ ([download link](https://www.oracle.com/java/technologies/downloads/))
 
 
 
