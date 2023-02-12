@@ -15,20 +15,20 @@ import java.time.LocalDate;
 @Table(name = "reservations")
 public class    Reservation {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @NotNull(message = "pickup date cannot be null")
     @Column(nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickupDate;
 
-    @NotNull
+    @NotNull(message = "local date cannot be null")
     @Column(nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate returnDate;
 
-    @NotNull
+    @NotNull(message = "status cannot be null")
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private ReservationStatus status;

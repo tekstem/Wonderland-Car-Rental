@@ -16,33 +16,33 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long carId;
 
-    @NotNull(message = "re")
+    @NotNull(message = "regno cannot be null")
     @Column(nullable = false)
     private String regNo;
 
-    @NotNull
+    @NotNull(message = "rental fee cannot be null")
     @Column(nullable = false)
     private Integer rentalFee;
 
-    @NotNull
+    @NotNull(message = "year cannot be null")
     @Column(nullable = false)
     private String year;
 
-    @NotNull
+    @NotNull(message = "name cannot be null")
     @Column(nullable = false)
     private String name;
 
-    @NotNull
+    @NotNull(message = "model cannot be null")
     @Column(nullable = false)
     private CarModel model;
 
     private String imageCover;
 
-    @NotNull
+    @NotNull(message = "status cannot be null")
     @Column(nullable = false)
     private boolean status = false;
 
-    @NotNull
+    @NotNull(message = "brand cannot be null")
     @ManyToOne
     @JoinColumn(name = "brandId", nullable = false)
     private CarBrand brand;

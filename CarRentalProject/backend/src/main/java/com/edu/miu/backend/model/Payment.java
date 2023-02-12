@@ -15,27 +15,27 @@ import java.time.LocalDate;
 @Table(name = "payments")
 public class Payment {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "payment id cannot be blank or null")
     @Column(nullable = false)
     private String paymentID;
 
-    @NotNull
+    @NotNull(message = "date cannot be null")
     @Column(nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
 
-    @NotNull
+    @NotNull(message = "amount cannot be null")
     @Column(nullable = false)
     private Double amount;
 
-    @NotNull
+    @NotNull(message = "status cannot be null")
     @Column(nullable = false)
     private Boolean status;
 
-    @NotNull
+    @NotNull(message = "payment type cannot be null")
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private PaymentType paymentType;

@@ -21,7 +21,7 @@ import java.util.Set;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @JsonIgnore
@@ -37,7 +37,7 @@ public class User {
     private String lastName;
 
     @Email
-    @NotBlank
+    @NotBlank(message = "email cannot be blank or null")
     private String email;
 
     @Column(unique = true)
@@ -50,7 +50,7 @@ public class User {
     @Column(unique = true)
     private String contactPhoneNumber;
 
-    @NotNull
+    @NotNull(message = "role cannot be null")
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
