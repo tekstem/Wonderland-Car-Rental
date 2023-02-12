@@ -1,0 +1,25 @@
+#spring:
+#  datasource:
+#    password: Alexander12
+#    username: root
+#    url: ${SPRINGDATASOURCEURL:jdbc:mysql://localhost:3306/car-rentals?useSSL=false&allowPublicKeyRetrieval=true}
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    hikari:
+#      maximumPoolSize: 10
+#  jpa:
+#    show-sql: false
+#    hibernate:
+#      ddl-auto: create-drop
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL8Dialect
+#  main:
+#    banner-mode: off
+#
+#debug: false
+#server:
+#  port: 8080
+#jwt.secret: ${CAR_RENTAL_SECRET_KEY:x7D*6]]s#j4ZI{M"V"4+[X%KbTW+Y3GI^KJb+E!n8^<nRbCboV'68m<{H+nGYXJ}
