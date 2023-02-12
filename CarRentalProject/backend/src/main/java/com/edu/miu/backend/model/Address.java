@@ -13,18 +13,18 @@ import javax.validation.constraints.NotBlank;
 public class Address {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "street cannot be null or blank or empty")
     @Column(nullable = false)
     private String street;
 
-    @NotBlank
+    @NotBlank(message = "city cannot be null or blank or empty")
     @Column(nullable = false)
     private String city;
 
-    @NotBlank
+    @NotBlank(message = "zip cannot be null or blank or empty")
     @Column(nullable = false)
     private String zip;
 }

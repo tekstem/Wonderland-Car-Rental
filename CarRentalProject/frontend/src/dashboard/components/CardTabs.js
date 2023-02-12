@@ -24,8 +24,8 @@ export const CardTabs = () => {
                 <Item  elevation={1}>
                     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                         <CardContent sx={{ flex: '1 0 auto' }}>
-                            <Button href="/admin/dashboard/cars">View all cars</Button>
-                            <Button href="/admin/dashboard/reservations">View all reservations</Button>
+                            <Button href="/admin/dashboard/cars">View All cars</Button>
+                            <Button href="/admin/dashboard/reservations">View All Reservations</Button>
                         </CardContent>
                     </Box>
                 </Item>

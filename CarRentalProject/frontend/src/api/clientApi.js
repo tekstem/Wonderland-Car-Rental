@@ -13,8 +13,6 @@ axios.interceptors.request.use(function (config) {
 });
 
 
-
-
 export const getApi = endpoint => {
     return  axios.get(endpoint)
         .then( response => {return  response})

@@ -13,10 +13,10 @@ import javax.validation.constraints.NotNull;
 public class Car {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long carId;
 
-    @NotNull
+    @NotNull(message = "re")
     @Column(nullable = false)
     private String regNo;
 
